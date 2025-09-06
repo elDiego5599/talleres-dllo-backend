@@ -1,24 +1,24 @@
 function desglosarString(palabra, tipo) {
-  const vocales = "aeiou";
-  let contadorVocales = 0;
-  let contadorConsonantes = 0;
+  const vocales = "aeiou"
+  let contadorVocales = 0
+  let contadorConsonantes = 0
   
-  const palabraMinusculas = palabra.toLowerCase();
+  const palabraMinusculas = palabra.toLowerCase()
 
   for (let i = 0; i < palabraMinusculas.length; i++) {
-    const letra = palabraMinusculas[i];
+    const letra = palabraMinusculas[i]
   
     if (vocales.includes(letra)) {
-        contadorVocales++;
+        contadorVocales++
       } else {
-        contadorConsonantes++;
+        contadorConsonantes++
       }
   }
 
   if (tipo === "vocales") {
-    return contadorVocales;
+    return contadorVocales
   } else {
-    return contadorConsonantes;
+    return contadorConsonantes
   }
 }
 
@@ -43,34 +43,34 @@ function conversionRomana(romano) {
     'C': 100,
     'D': 500,
     'M': 1000
-  };
+  }
 
-  let resultado = 0;
+  let resultado = 0
   for (let i = 0; i < romano.length; i++) {
-    const actual = valores[romano[i]];
-    const siguiente = valores[romano[i + 1]];
+    const actual = valores[romano[i]]
+    const siguiente = valores[romano[i + 1]]
 
     if (siguiente > actual) {
-      resultado += siguiente - actual;
-      i++;
+      resultado += siguiente - actual
+      i++
     } else {
-      resultado += actual;
+      resultado += actual
     }
   }
-  return resultado;
+  return resultado
 }
 
 function descomposicion(texto) {
-  const partes = texto.split(',');
-  const palabraADescomponer = partes[0];
-  const diccionario = partes.slice(1);
+  const partes = texto.split(',')
+  const palabraADescomponer = partes[0]
+  const diccionario = partes.slice(1)
 
   for (let i = 1; i < palabraADescomponer.length; i++) {
-    const parte1 = palabraADescomponer.substring(0, i);
-    const parte2 = palabraADescomponer.substring(i);
+    const parte1 = palabraADescomponer.substring(0, i)
+    const parte2 = palabraADescomponer.substring(i)
 
     if (diccionario.includes(parte1) && diccionario.includes(parte2)) {
-      return [parte1, parte2];
+      return [parte1, parte2]
     }
   }
 
